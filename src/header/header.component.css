@@ -1,0 +1,109 @@
+header {
+  padding: 10px;
+  background: #01DFD7;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+
+}
+
+h1 {
+color: #2f4f4f;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/*
+.logo1 {
+  width: 90px;
+  margin-left: auto;
+}
+
+.logo1 {
+  cursor: pointer;
+}
+
+.desktop_menu {
+  margin-top: 5px;
+  margin-left: 80px;
+}
+
+.desktop_menu ul {
+  margin-top: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.desktop_menu ul li {
+  list-style-type: none;
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 26px;
+}
+
+.desktop_menu ul li:hover {
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+  color:#fff;
+  transition: 0.4s ease-in-out;
+}
+
+/* tirando o sublinhado do menu de intens
+a {
+  text-decoration: none;
+  color:#fff;
+}
+
+#li {
+  text-decoration: none;
+}
+.menu-icon {
+  display: none;
+}
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .desktop_menu {
+    position: fixed;
+    transition: 0.4s ease-in-out;
+    right: 0;
+    top: 64px;
+    background: #ff1493;
+    width: 280px;
+    height: 100%;
+  }
+
+  .desktop_menu ul li {
+    display: block;
+    text-align: left;
+    margin: 0px;
+    padding: 10px 0 10px 26px;
+    border-bottom: 1px solid white;
+  }
+
+  .menu-icon {
+    display: block;
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+  }
+
+  .mobile_menu {
+    right: 0;
+    transition: 0.4s ease-in;
+  }
+
+  .header-menuitem a {
+    text-decoration: none;
+  }
+
+  .header-menuitem a:hover {
+    color: #fff;
+  }
+
+}
+  */

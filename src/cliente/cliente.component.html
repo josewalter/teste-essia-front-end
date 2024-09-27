@@ -1,21 +1,19 @@
 <div class="container">
-
   <form>
-    <input type="text" formControlName="nomeCliente"     placeholder="Nome do cliente" class="form-control"/>
-    <input type="text" formControlName="cpf"             placeholder="Cpf" class="form-control"/>
-    <input type="email" formControlName="email"          placeholder="Email" class="form-control"/>
-    <input type="text" formControlName="telefoneCelular" placeholder="TelefoneCelular" class="form-control"/>
+    <input type="text"  placeholder="Nome do cliente" class="form-control" name="nomeCliente"        [(ngModel)]="cliente.nomeCliente"/>
+    <input type="text"  placeholder="Cpf"             class="form-control" name="cpf"                [(ngModel)]="cliente.cpf"/>
+    <input type="email" placeholder="Email"           class="form-control" name="email"              [(ngModel)]="cliente.email"/>
+    <input type="text"  placeholder="TelefoneCelular" class="form-control" name="telefoneCelular"    [(ngModel)]="cliente.telefoneCelular"/>
 
 
-          <input type="button" value="Cadastrar" *ngIf="btnCadastrar"  class="btn btn-primary">
-
+          <input type="button" value="Cadastrar" *ngIf="btnCadastrar"  class="btn btn-primary" (click)="cadastrar()">
           <input type="button" value="Alterar"   *ngIf="!btnCadastrar"  class="btn btn-warning">
           <input type="button" value="Remover "  *ngIf="!btnCadastrar"  class="btn btn-danger">
           <input type="button" value="Cancelar"  *ngIf="!btnCadastrar"  class="btn btn-secundary">
 
   </form>
 
-    <table class="table">
+      <table class="table">
         <thead>
             <tr>
               <th>Id da tabela</th>
@@ -27,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let c of Clientes; index as i">
+          <tr *ngFor="let c of clientes; index as i">
              <td>{{i+1}}</td>
              <td>{{c.idCliente}}</td>
              <td>{{c.nomeCliente}}</td>
@@ -38,6 +36,5 @@
           </tr>
         </tbody>
     </table>
-
 </div>
 

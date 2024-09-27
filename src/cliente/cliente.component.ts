@@ -2,41 +2,43 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Cliente } from '../app/modelo/Cliente';
 import { ClienteService } from '../app/servico/cliente.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cliente',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './cliente.component.html',
-  styleUrl: './cliente.component.css'
+  styleUrl: './cliente.component.css',
 })
-
 export class ClienteComponent {
+  cliente = new Cliente();
+
+  btnCadastrar: boolean = true;
+
+  clientes: Cliente[] = [];
+
+  constructor(private servico:ClienteService) {}
 /*
-  formulario = new FormGroup({
-
-    nomeCliente     : new FormControl('', [Validators.required, Validators.minLength(3)]),
-    cpf             : new FormControl('', [Validators.required, Validators.min(1), Validators.max(14)]),
-    email           : new FormControl('', [Validators.required, Validators.email]),
-    telefoneCelular : new FormControl('', [Validators.required, Validators.min(1), Validators.max(14)])
-  });
+  getAllClientes() {
+    this.servico.getClientes()
+    .subscribe((data) => {this.clientes = data;
+    });
+  }
 */
-    btnCadastrar:boolean = true;
+  selecionar(): void{
+    this.servico.selecionar()
+    .subscribe(retorno => this.clientes = retorno);
+  }
 
-    Clientes:Cliente[] = [];
+  cadastrar():void {
+    this.servico.cadastrar(this.cliente)
+    .subscribe(retorno => {this.clientes.push(retorno);
+    });
+  }
 
-    constructor(private servico:ClienteService){
-
-    }
-
-   selecionar():void{
-      this.servico.selecionar()
-      .subscribe(retorno => this.Clientes = retorno);
-   }
-
-   ngOnInit(){
-     this.selecionar();
-   }
+  ngOnInit(): void {
+    this.selecionar();
+  }
 
 }
-

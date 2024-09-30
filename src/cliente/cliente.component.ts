@@ -19,13 +19,7 @@ export class ClienteComponent {
   clientes: Cliente[] = [];
 
   constructor(private servico:ClienteService) {}
-/*
-  getAllClientes() {
-    this.servico.getClientes()
-    .subscribe((data) => {this.clientes = data;
-    });
-  }
-*/
+
   selecionar(): void{
     this.servico.selecionar()
     .subscribe(retorno => this.clientes = retorno);

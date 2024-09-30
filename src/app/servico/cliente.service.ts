@@ -23,14 +23,5 @@ export class ClienteService {
   cadastrar(obj:Cliente):Observable<Cliente>{
      return this.http.post<Cliente>(this.url, obj);
   }
-  /*
-  getClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(this.url);
-  }
-
-  cadastrar(cliente: Cliente){
-    return this.http.post<Cliente>(this.url, cliente);
- }
-*/
 }
 

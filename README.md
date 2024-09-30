@@ -28,3 +28,9 @@ Execute `ng e2e` para executar os testes de ponta a ponta por meio de uma plataf
 ## Mais ajuda
 
 Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão geral e referência de comando do Angular CLI](https://angular.dev/tools/cli).
+
+## Docker
+Comando para gerar o build do docker, vc precisa estar dentro da pasta do projeto: docker build -t angular-essia .
+Comando para subir o container: docker run -p 4200:4200 angular-essia
+Node versão: 20
+Angular: 18

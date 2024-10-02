@@ -16,6 +16,8 @@ export class ClienteComponent {
 
   btnCadastrar: boolean = true;
 
+  tabela:boolean = true;
+
   clientes: Cliente[] = [];
 
   constructor(private servico:ClienteService) {}
@@ -28,9 +30,22 @@ export class ClienteComponent {
   cadastrar():void {
     this.servico.cadastrar(this.cliente)
     .subscribe(retorno => {this.clientes.push(retorno);
+
+    this.cliente = new Cliente();
+
+    alert('Cliente cadastrado com sucesso!');
     });
   }
 
+  //Método para selecionar um cliente específico
+  selecionarCliente(posicao:number):void{
+    this.cliente = this.clientes[posicao];
+    this.btnCadastrar =false;
+
+    this.tabela = false;
+  }
+
+  // Método de inicialização
   ngOnInit(): void {
     this.selecionar();
   }

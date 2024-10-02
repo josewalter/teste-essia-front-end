@@ -13,7 +13,7 @@
 
   </form>
 
-      <table class="table">
+      <table class="table" *ngIf="tabela">
         <thead>
             <tr>
               <th>Id da tabela</th>
@@ -32,7 +32,7 @@
              <td>{{c.cpf}}</td>
              <td>{{c.email}}</td>
              <td>{{c.telefoneCelular}}</td>
-             <td><button class="btn btn-primary">Selecionar</button></td>
+             <td><button class="btn btn-primary" (click)="selecionarCliente(i)">Selecionar</button></td>
           </tr>
         </tbody>
     </table>
